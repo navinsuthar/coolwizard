@@ -1,4 +1,4 @@
-function boxshadowizard(options) {
+function coolwizard(options) {
     let images = document.querySelectorAll('.boxshadowizard');
     if (options.shadow_type === 'hard')
         options.shadow_type === '0px'
@@ -14,4 +14,4 @@ function boxshadowizard(options) {
     });
 }
 
-module.exports.boxshadowizard = boxshadowizard;
+module.exports.coolwizard = coolwizard;
