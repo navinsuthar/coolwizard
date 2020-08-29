@@ -1,17 +1,30 @@
-function coolwizard(options) {
-    let images = document.querySelectorAll('.boxshadowizard');
-    if (options.shadow_type === 'hard')
-        options.shadow_type === '0px'
-    else
-        options.shadow_type === '15px'
+const colors = [
+    '#2196f3',
+    '#e91e63',
+    '#ffeb3b',
+    '#74ff1d'
+];
 
-    images.forEach(image => {
-        image.getElementsByClassName.boxShadow = `10px 10px ${options.shadow_type} 1px rgba(0,0,0,0.12)`;
+function createSquare() {
+    const section = document.querySelector('.section');
+    const square = document.createElement('box');
 
-        if (options.padding) {
-            image.style.padding = '1em';
-        }
-    });
+    var size = Math.random() * 50;
+    square.style.width = 20 + size + 'px';
+    square.style.height = 20 + size + 'px';
+
+    square.style.top = Math.random() * innerHeight + 'px';
+    square.style.left = Math.random() * innerWidth + 'px';
+
+    const bg = colors[Math.floor(Math.random() * colors.length)];
+
+    square.style.background = bg;
+
+    section.appendChild(square);
+
+    setTimeout(() => {
+        square.remove();
+    }, 5000);
 }
 
-module.exports.coolwizard = coolwizard;
+setInterval(createSquare, 150);
